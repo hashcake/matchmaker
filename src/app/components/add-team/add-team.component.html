@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Aggiungi squadra</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="teamForm">
+        <div class="my-1">
+            <mdb-form-control>
+                <input mdbInput type="text" id="formName" class="form-control" formControlName="name" required />
+                <label mdbLabel class="form-label" for="formName">Nome squadra</label>
+            </mdb-form-control>
+        </div>
+        <div class="my-1">
+            <mdb-form-control>
+                <input mdbInput type="text" id="formVenue" class="form-control" formControlName="venue" required />
+                <label mdbLabel class="form-label" for="formVenue">Stadio</label>
+            </mdb-form-control>
+        </div>
+        <div class="my-1">
+            <mdb-form-control>
+                <input mdbInput type="text" id="formMisc" class="form-control" formControlName="misc" />
+                <label mdbLabel class="form-label" for="formMisc">Altro</label>
+            </mdb-form-control>
+        </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">
+      Annulla
+    </button>
+    <button type="button" class="btn btn-primary" (click)="add()" [disabled]="!teamForm.valid">Conferma</button>
+  </div>

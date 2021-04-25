@@ -1,0 +1,26 @@
+<div *ngIf="teams != undefined; else elseBlock">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Stadio</th>
+            <th scope="col">Misc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of teams">
+              <th scope="row">1</th>
+              <td>{{team.name}}</td>
+              <td>{{team.venue}}</td>
+              <td>{{team.misc}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<ng-template #elseBlock>
+    <div class="text-center">
+        Non ci sono ancora squadre inserite. Importale da file oppure aggiungile manualmente.
+    </div>
+</ng-template>
+<button class="btn btn-primary" (click)="openAddTeamDialog()">Open modal</button>
