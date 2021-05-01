@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row" *ngIf="calendar; else elseBlock">
+        <!-- grid with matches-->
+        <div class="col-4" *ngFor="let matchDay of calendar.days; let i=index">
+            <!-- {{i + 1}} - {{matchDay.dayNo}} -->
+            <div class="matchDay">
+                Giornata {{matchDay.dayNo + 1}}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Home</th>
+                            <th>Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let match of matchDay.matches">
+                            <td>{{match.home.name}}</td>
+                            <td>{{match.away.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- button to generate again -->
+    </div>
+    <ng-template #elseBlock>
+        <div
+        class="d-flex align-items-center justify-content-center"
+        style="height: 350px; flex-direction: column;"
+        >
+        <p class="lead">Nessun calendario ancora creato.</p>
+        <div>
+            <button type="button" class="btn btn-primary" 
+                [disabled]="teams === undefined"
+                (click)="createCalendar()">Crea calendario</button>
+        </div>
+        </div>
+    </ng-template>
+</div>

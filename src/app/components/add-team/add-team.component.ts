@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MdbModalRef } from 'mdb-angular-ui-kit';
-import { Team } from 'src/app/entities/Team';
+import { Team } from 'src/app/entities/team';
 import { Validators } from '@angular/forms';
 
 @Component({

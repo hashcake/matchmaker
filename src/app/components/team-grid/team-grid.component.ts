@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit';
-import { Team } from 'src/app/entities/Team';
+import { Team } from 'src/app/entities/team';
 import { ManagerService } from 'src/app/services/manager.service';
 import { AddTeamComponent } from '../add-team/add-team.component';
 
