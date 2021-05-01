@@ -4,12 +4,12 @@
         <div class="col-4" *ngFor="let matchDay of calendar.days; let i=index">
             <!-- {{i + 1}} - {{matchDay.dayNo}} -->
             <div class="matchDay">
-                Giornata {{matchDay.dayNo + 1}}
-                <table>
+                <h5 class="p-1 text-center">Giornata {{matchDay.dayNo + 1}}</h5>
+                <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th>Home</th>
-                            <th>Away</th>
+                            <th>Casa</th>
+                            <th>Trasferta</th>
                         </tr>
                     </thead>
                     <tbody>

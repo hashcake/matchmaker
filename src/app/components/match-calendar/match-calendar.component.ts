@@ -34,8 +34,7 @@ export class MatchCalendarComponent implements OnInit {
   }
 
   createCalendar(): void {
-    this.calendar = this.calendarService.matchmake(ss); //mock
-    console.log(this.calendar);
+    this.calendar = this.calendarService.matchmake(this.teams); //mock
   }
 
 }

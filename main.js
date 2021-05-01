@@ -11,7 +11,6 @@ function createWindow () {
   })
   win.removeMenu()
   win.maximize()
-  win.webContents.openDevTools()
   win.loadFile('dist/index.html')
 }
 
