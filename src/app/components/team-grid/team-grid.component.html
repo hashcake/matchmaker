@@ -1,5 +1,5 @@
 <div *ngIf="teams != undefined; else elseBlock">
-    <table class="table">
+    <table class="table table-sm table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -23,6 +23,6 @@
         Non ci sono ancora squadre inserite. Importale da file oppure aggiungile manualmente.
     </div>
 </ng-template>
-<div class="fixed-bottom text-center">
-  <button class="btn btn-primary" (click)="openAddTeamDialog()">Aggiungi squadra</button>
+<div class="fixed-bottom text-end">
+  <button class="btn btn-primary me-3 my-3" (click)="openAddTeamDialog()">Aggiungi squadra</button>
 </div>

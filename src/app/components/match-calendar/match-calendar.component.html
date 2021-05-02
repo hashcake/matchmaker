@@ -1,21 +1,18 @@
 <div class="container-fluid">
-    <div class="row" *ngIf="calendar; else elseBlock">
+    <div class="row" *ngIf="calendar; else noCalendar">
+        <div class="col-12">
+            <h1 class="text-center">Calendario {{calendar.name}}</h1>
+        </div>
         <!-- grid with matches-->
         <div class="col-4" *ngFor="let matchDay of calendar.days; let i=index">
-            <!-- {{i + 1}} - {{matchDay.dayNo}} -->
-            <div class="matchDay">
-                <h5 class="p-1 text-center">Giornata {{matchDay.dayNo + 1}}</h5>
-                <table class="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th>Casa</th>
-                            <th>Trasferta</th>
-                        </tr>
-                    </thead>
+            <div class="matchDay mb-3">
+                <h6 class="p-1 text-center">Giornata {{matchDay.dayNo + 1}}</h6>
+                <table class="table table-sm table-borderless">
                     <tbody>
                         <tr *ngFor="let match of matchDay.matches">
-                            <td>{{match.home.name}}</td>
-                            <td>{{match.away.name}}</td>
+                            <td class="text-end">{{match.home.name}}</td>
+                            <td class="text-center">-</td>
+                            <td class="text-start">{{match.away.name}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -23,7 +20,7 @@
         </div>
         <!-- button to generate again -->
     </div>
-    <ng-template #elseBlock>
+    <ng-template #noCalendar>
         <div
         class="d-flex align-items-center justify-content-center"
         style="height: 350px; flex-direction: column;"
@@ -31,7 +28,7 @@
         <p class="lead">Nessun calendario ancora creato.</p>
         <div>
             <button type="button" class="btn btn-primary" 
-                [disabled]="teams === undefined"
+                [disabled]="!teams"
                 (click)="createCalendar()">Crea calendario</button>
         </div>
         </div>

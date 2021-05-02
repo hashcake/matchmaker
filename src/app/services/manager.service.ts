@@ -12,8 +12,7 @@ const stdTeams: Team[] = [
   {name: 'Juventus', venue: 'Juventus stadium', misc: ''},
   {name: 'Reggina', venue: 'Boh', misc: ''},
   {name: 'Pro Sesto', venue: 'Sesto Stadium', misc: ''},
-  {name: 'Monza', venue: 'Mah', misc: 'Per silvio'},
-
+  {name: 'Monza', venue: 'Mah', misc: 'Per silvio'}
 ]
 
 @Injectable({

@@ -11,24 +11,10 @@ export class CalendarService {
 
   constructor() { }
 
-  generateCalendar(teams: Team []): Calendar {
-    return {
-      name: 'Serie A', 
-      days: [
-        {
-          dayNo: 1,
-          matches: [
-            {
-              home: teams[0],
-              away: teams[1],
-              venue: teams[0].venue
-            }
-          ]
-        }
-      ]} // mock
-  }
-
   matchmake(teams: Team []): Calendar {
+    //randomize
+    this.shuffle(teams)
+
     let firstHalf = teams.slice(0, teams.length/2)
     let secondHalf = teams.slice(teams.length/2)
     secondHalf.reverse()
@@ -80,5 +66,12 @@ export class CalendarService {
     }
 
     return day
+  }
+
+  private shuffle(teams: Team[]) {
+    for (let i = teams.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [teams[i], teams[j]] = [teams[j], teams[i]];
+  }
   }
 }
