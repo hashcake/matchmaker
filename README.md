@@ -1,6 +1,10 @@
 # Matchmakr
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
+Simple matchmaking and calendar generation electron application.
+
+## Run
+
+Run `npm run electron` for a preview of the packaged application
 
 ## Development server
 
